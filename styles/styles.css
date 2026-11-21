@@ -343,6 +343,13 @@ ul {
   gap: 16px;
 }
 
+.form__group,
+.form__row {
+  border: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+
 .form__group {
   display: grid;
   gap: 8px;
