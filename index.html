@@ -1,50 +1,289 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- En el <head> -->
-  <meta charset="UTF-8" > 
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GameZone - Torneos de Videojuegos</title>
-  <link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="stylesheet" href="styles/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <title>GAMEZONE | Plataforma de torneos gamer</title>
+   <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
- 
-<!-- En el <body> -->
-<header class="header">
-  <div class="header__container">
- 
-    <a href="index.html" class="logo">
-      <span class="logo__icon" aria-hidden="true">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="6" y1="12" x2="10" y2="12"/>
-          <line x1="8" y1="10" x2="8" y2="14"/>
-          <line x1="15" y1="13" x2="15.01" y2="13"/>
-          <line x1="18" y1="11" x2="18.01" y2="11"/>
-          <rect x="2" y="6" width="20" height="12" rx="4"/>
-        </svg>
-      </span>
-      <span class="logo__text">GAME<span>ZONE</span></span>
-    </a>
- 
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
-      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
-    </button>
- 
-    <nav class="nav" id="nav">
-      <ul class="nav__list">
-        <li><a href="index.html" class="nav__link active" aria-current="page">Inicio</a></li>
-        <li><a href="torneos.html" class="nav__link">Torneos</a></li>
-        <li><a href="videojuegos.html" class="nav__link" >Videojuegos</a></li>
-        <li><a href="clasificaciones.html" class="nav__link" >Clasificaciones</a></li>
-      </ul>
-      <a href="registro.html" class="btn-registro">Registrarse</a>
-    </nav>
- 
-  </div>
-</header>
+  <svg class="sprite" aria-hidden="true"> <!-- svg es para  -->
+    <symbol id="icon-gamepad" viewBox="0 0 24 24">
+      <line x1="6" y1="12" x2="10" y2="12"/>
+      <line x1="8" y1="10" x2="8" y2="14"/>
+      <line x1="15" y1="13" x2="15.01" y2="13"/>
+      <line x1="18" y1="11" x2="18.01" y2="11"/>
+      <rect x="2" y="6" width="20" height="12" rx="4"/>
+    </symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12 5 19 12 12 19"/>
+    </symbol>
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <rect x="3" y="4" width="18" height="18" rx="2"/>
+      <line x1="16" y1="2" x2="16" y2="6"/>
+      <line x1="8" y1="2" x2="8" y2="6"/>
+      <line x1="3" y1="10" x2="21" y2="10"/>
+    </symbol>
+    <symbol id="icon-user" viewBox="0 0 24 24">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </symbol>
+  </svg>
 
-<script src="scripts/script.js"></script>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="index.html" class="logo">
+        <span class="logo__icon">
+          <svg class="icon" aria-hidden="true"><use href="#icon-gamepad"/></svg>
+        </span>
+        <span class="logo__text">GAME<span class="logo__accent">ZONE</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link nav__link--active">Inicio</a></li>
+          <li><a href="torneos.html" class="nav__link">Torneos</a></li>
+          <li><a href="videojuegos.html" class="nav__link">Videojuegos</a></li>
+          <li><a href="clasificaciones.html" class="nav__link">Clasificaciones</a></li>
+        </ul>
+        <a href="registro.html" class="btn btn--gradient btn--sm nav__cta">Registrarse</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__container">
+
+        <div class="hero__content">
+          <p class="badge"><span class="badge__dot"></span>Temporada competitiva 2025</p>
+
+          <h1 class="hero__title" id="hero-title">
+            Tu partida<br>empieza aquí
+            <span class="hero__title-accent">La gloria se gana</span>
+          </h1>
+
+          <p class="hero__text">
+            Compite contra los mejores, escala en la clasificación y transforma cada victoria en tu próxima gran historia
+          </p>
+
+          <a href="torneos.html" class="btn btn--primary">
+            Explorar torneos
+            <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </a>
+
+          <dl class="stats">
+            <div class="stats__item">
+              <dt class="stats__label">Jugadores activos</dt>
+              <dd class="stats__value">24K+</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label">Torneos creados</dt>
+              <dd class="stats__value">320</dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label">En premios</dt>
+              <dd class="stats__value">$85K</dd>
+            </div>
+          </dl>
+        </div>
+
+        <article class="live-card">
+          <figure class="live-card__media">
+            <img class="live-card__img" src="img/valorant.jpg" alt="Setup gamer con luces de neón">
+            <span class="badge badge--tag live-card__badge"><span class="badge__dot"></span>En directo</span>
+          </figure>
+
+          <div class="match live-card__match">
+            <div class="match__header">
+              <h2 class="match__title">Gran final</h2>
+              <p class="match__round">Mapa 3 / 5</p>
+            </div>
+            <div class="match__body">
+              <p class="match__team">
+                <span class="match__logo match__logo--cyan">N</span>
+                <span class="match__name">Nova</span>
+              </p>
+              <p class="match__score" aria-label="Nova 2, Void 1">
+                2<span class="match__score-sep">:</span>1
+              </p>
+              <p class="match__team match__team--reverse">
+                <span class="match__logo match__logo--purple">V</span>
+                <span class="match__name">Void</span>
+              </p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Juegos disponibles -->
+    <section class="platforms" aria-label="Juegos disponibles">
+      <div class="container platforms__container">
+        <p class="platforms__label">Compite en</p>
+        <ul class="platforms__list">
+          <li class="platforms__item">Valorant</li>
+          <li class="platforms__item">Fortnite</li>
+          <li class="platforms__item">Counter-Strike 2</li>
+          <li class="platforms__item">League of Legends</li>
+          <li class="platforms__item">EA Sports FC</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Torneos destacados -->
+    <section class="section" aria-labelledby="torneos-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Competición abierta</p>
+          <h2 class="section__title" id="torneos-title">Torneos destacados</h2>
+          <p class="section__subtitle">Encuentra tu próxima competencia y descubre dónde se juega la siguiente gran final</p>
+        </header>
+
+        <ul class="tournaments">
+          <li>
+            <article class="tournament-card">
+              <figure class="tournament-card__media">
+                <img class="tournament-card__img" src="images/valorant.jpg" alt="Torneo de Valorant">
+                <span class="status status--live tournament-card__status">En curso</span>
+                <figcaption class="tournament-card__game">Valorant</figcaption>
+              </figure>
+              <div class="tournament-card__body">
+                <h3 class="tournament-card__title">Neon Strike Cup</h3>
+                <ul class="tournament-card__meta">
+                  <li class="tournament-card__meta-item">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>
+                    <time datetime="2025-05-24T18:00">24 MAY · 18:00</time>
+                  </li>
+                  <li class="tournament-card__meta-item">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-user"/></svg>
+                    <span>128 / 128</span>
+                  </li>
+                </ul>
+                <footer class="tournament-card__footer">
+                  <p class="tournament-card__prize-label">Premio</p>
+                  <p class="tournament-card__prize">$5,000</p>
+                </footer>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="tournament-card">
+              <figure class="tournament-card__media">
+                <img class="tournament-card__img" src="images/counter-strike.jpg" alt="Torneo de Counter-Strike 2">
+                <span class="status status--open tournament-card__status">Disponible</span>
+                <figcaption class="tournament-card__game">Counter-Strike 2</figcaption>
+              </figure>
+              <div class="tournament-card__body">
+                <h3 class="tournament-card__title">Global Masters</h3>
+                <ul class="tournament-card__meta">
+                  <li class="tournament-card__meta-item">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>
+                    <time datetime="2025-06-02T20:00">02 JUN · 20:00</time>
+                  </li>
+                  <li class="tournament-card__meta-item">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-user"/></svg>
+                    <span>82 / 128</span>
+                  </li>
+                </ul>
+                <footer class="tournament-card__footer">
+                  <p class="tournament-card__prize-label">Premio</p>
+                  <p class="tournament-card__prize">$8,500</p>
+                </footer>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="tournament-card">
+              <figure class="tournament-card__media">
+                <img class="tournament-card__img" src="images/fortnite.jpg" alt="Torneo de Fortnite">
+                <span class="status status--open tournament-card__status">Disponible</span>
+                <figcaption class="tournament-card__game">Fortnite</figcaption>
+              </figure>
+              <div class="tournament-card__body">
+                <h3 class="tournament-card__title">Battle Royale Night</h3>
+                <ul class="tournament-card__meta">
+                  <li class="tournament-card__meta-item">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-calendar"/></svg>
+                    <time datetime="2025-06-08T17:00">08 JUN · 17:00</time>
+                  </li>
+                  <li class="tournament-card__meta-item">
+                    <svg class="icon" aria-hidden="true"><use href="#icon-user"/></svg>
+                    <span>67 / 100</span>
+                  </li>
+                </ul>
+                <footer class="tournament-card__footer">
+                  <p class="tournament-card__prize-label">Premio</p>
+                  <p class="tournament-card__prize">$3,000</p>
+                </footer>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <p class="section__action">
+          <a href="torneos.html" class="btn btn--outline">
+            Ver todos los torneos
+            <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Videojuegos destacados -->
+    <section class="section section--alt" aria-labelledby="juegos-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Elige tu campo</p>
+          <h2 class="section__title" id="juegos-title">Videojuegos destacados</h2>
+          <p class="section__subtitle">Los títulos más competitivos, una sola comunidad</p>
+        </header>
+
+        <ul class="games">
+          <li>
+            <article class="game-card">
+              <img class="game-card__img" src="images/valorant.jpg" alt="">
+              <div class="game-card__body">
+                <p class="game-card__genre">Shooter táctico</p>
+                <h3 class="game-card__name">Valorant</h3>
+                <p class="game-card__count">12 torneos activos</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="game-card">
+              <img class="game-card__img" src="images/fortnite.jpg" alt="">
+              <div class="game-card__body">
+                <p class="game-card__genre">Battle royale</p>
+                <h3 class="game-card__name">Fortnite</h3>
+                <p class="game-card__count">8 torneos activos</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Aquí irá el footer -->
+
+  <script src="menu.js"></script>
 </body>
 </html>
