@@ -25,7 +25,8 @@ async function hashPassword(password) {
 // ---------- Validación ----------
 function setError(input, msg) {
   const group = input.closest('.form__group');
-  group.classList.toggle('invalid', !!msg);
+  group.classList.toggle('form__group--invalid', !!msg); // <- cambió
+  input.setAttribute('aria-invalid', !!msg);             // <- nuevo (accesibilidad)
   group.querySelector('.form__error').textContent = msg;
 }
 
