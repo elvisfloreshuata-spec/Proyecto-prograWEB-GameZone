@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,9 +45,9 @@
   <main class="registro">
     <div class="registro__container">
 
-      <div class="registro__info">
+      <section class="registro__info" aria-labelledby="registro-titulo">
         <span class="badge">Únete a la comunidad</span>
-        <h1 class="registro__title">
+        <h1 class="registro__title" id="registro-titulo">
           Crea tu cuenta.<br>
           <span class="gradient-text">Empieza a competir.</span>
         </h1>
@@ -60,38 +60,38 @@
           <li>Premios reales en cada temporada</li>
           <li>Perfil con tus estadísticas y logros</li>
         </ul>
-      </div>
+      </section>
 
       <form class="card form" id="registroForm" novalidate>
         <h2 class="form__title">Registro de jugador</h2>
 
-        <div class="form__group">
+        <fieldset class="form__group" aria-label="Nombre de usuario">
           <label for="usuario">Nombre de usuario</label>
           <input type="text" id="usuario" name="usuario" placeholder="Ej: NovaPlayer" required minlength="3">
           <small class="form__error"></small>
-        </div>
+        </fieldset>
 
-        <div class="form__group">
+        <fieldset class="form__group" aria-label="Correo electrónico">
           <label for="email">Correo electrónico</label>
           <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
           <small class="form__error"></small>
-        </div>
+        </fieldset>
 
-        <div class="form__row">
-          <div class="form__group">
+        <fieldset class="form__row" aria-label="Contraseñas">
+          <fieldset class="form__group" aria-label="Contraseña">
             <label for="password">Contraseña</label>
             <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required minlength="8">
             <small class="form__error"></small>
-          </div>
+          </fieldset>
 
-          <div class="form__group">
+          <fieldset class="form__group" aria-label="Confirmar contraseña">
             <label for="password2">Confirmar contraseña</label>
             <input type="password" id="password2" name="password2" placeholder="Repite la contraseña" required>
             <small class="form__error"></small>
-          </div>
-        </div>
+          </fieldset>
+        </fieldset>
 
-        <div class="form__group">
+        <fieldset class="form__group" aria-label="Juego favorito">
           <label for="juego">Juego favorito</label>
           <select id="juego" name="juego" required>
             <option value="">Selecciona uno</option>
@@ -102,7 +102,7 @@
             <option>EA Sports FC</option>
           </select>
           <small class="form__error"></small>
-        </div>
+        </fieldset>
 
         <label class="form__check">
           <input type="checkbox" id="terminos" required>
