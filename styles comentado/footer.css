@@ -1,0 +1,73 @@
+/* ==========================================================
+   GAMEZONE · footer.css (BEM)
+   Depende de las variables y utilidades de styles.css
+   ========================================================== */ /* Cabecera informativa del archivo */
+
+.footer { /* Contenedor general del pie de página */
+  background: var(--bg); /* Fondo oscuro principal */
+  border-top: 1px solid var(--border); /* Línea divisoria superior */
+}
+
+.footer__container { /* Grid principal del footer */
+  display: grid; /* Disposición en cuadrícula */
+  grid-template-columns: 1.6fr 1fr 1fr 1fr; /* Columna de marca más ancha y 3 columnas de enlaces */
+  gap: 48px; /* Separación entre columnas y filas */
+  padding-block: 56px 48px; /* Relleno vertical superior (56px) e inferior (48px) */
+}
+
+/* ---------- Brand ---------- */ /* Sección de marca del footer */
+.footer__brand { /* Columna de identidad y descripción */
+  display: flex; /* Organiza elementos en columna */
+  flex-direction: column; /* Dirección vertical */
+  align-items: flex-start; /* Alinea elementos a la izquierda */
+  gap: 20px; /* Espacio entre logo y descripción */
+}
+
+.footer__description { /* Texto descriptivo de la marca */
+  max-width: 320px; /* Limita el ancho del párrafo */
+  font-size: 0.95rem; /* Tamaño de fuente */
+  line-height: 1.7; /* Espaciado vertical cómodo entre líneas */
+  color: var(--text-faint); /* Color tenue */
+}
+
+/* ---------- Columnas de navegación ---------- */ /* Títulos y listas de enlaces */
+.footer__title { /* Encabezado de cada columna de enlaces */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  font-family: var(--font-display); /* Tipografía display */
+  font-size: 0.7rem; /* Tamaño pequeño */
+  font-weight: 700; /* Negrita */
+  letter-spacing: 0.16em; /* Espaciado entre letras */
+  text-transform: uppercase; /* Mayúsculas */
+  color: var(--text-muted); /* Color secundario */
+}
+
+.footer__list { /* Lista vertical de enlaces */
+  display: grid; /* Apila enlaces en grid */
+  gap: 14px; /* Separación entre cada enlace */
+}
+
+.footer__link { /* Cada enlace dentro de las columnas del footer */
+  font-size: 0.95rem; /* Tamaño del enlace */
+  color: var(--text-faint); /* Color tenue por defecto */
+  transition: color 0.2s; /* Transición suave al cambiar de color */
+}
+
+.footer__link:hover,
+.footer__link:focus-visible { /* Al pasar el cursor o enfocar con teclado */
+  color: var(--cyan); /* Resalta el enlace en cian */
+}
+
+/* ---------- Franja inferior ---------- */ /* Barra inferior del copyright */
+.footer__bottom { /* Contenedor de la franja inferior */
+  border-top: 1px solid var(--border); /* Línea separadora superior */
+}
+
+.footer__bottom .container { /* Ajusta el padding del contenedor dentro de .footer__bottom */
+  padding-block: 20px; /* Espaciado vertical superior e inferior de 20px */
+}
+
+.footer__copy { /* Texto de derechos de autor */
+  font-size: 0.8rem; /* Tamaño pequeño */
+  text-align: center; /* Centra el texto */
+  color: var(--text-faint); /* Color tenue */
+}

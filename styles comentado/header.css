@@ -1,0 +1,119 @@
+.header { /* Barra superior de navegación */
+  position: sticky; /* Se mantiene pegada arriba al hacer scroll */
+  top: 0; /* Fijada en el borde superior */
+  z-index: 100; /* Se superpone sobre el contenido normal */
+  background: rgba(10, 14, 26, 0.9); /* Fondo oscuro semitransparente */
+  backdrop-filter: blur(10px); /* Efecto cristal esmerilado sobre lo que pasa detrás */
+  border-bottom: 1px solid var(--border); /* Línea divisoria inferior */
+}
+
+.header__container { /* Contenedor interno del header */
+  height: var(--header-h); /* Altura definida en variables */
+  display: flex; /* Distribuye elementos en fila */
+  align-items: center; /* Centra verticalmente */
+  justify-content: space-between; /* Separa logo a la izquierda y nav a la derecha */
+}
+
+.logo { /* Bloque del logotipo */
+  display: flex; /* Alinea icono y texto en fila */
+  align-items: center; /* Centra verticalmente */
+  gap: 12px; /* Espacio entre icono y texto */
+}
+
+.logo__icon { /* Caja contenedora del icono del logo */
+  width: 40px; /* Ancho de la caja */
+  height: 40px; /* Alto de la caja */
+  display: grid; /* Usa grid para centrar fácilmente */
+  place-items: center; /* Centra horizontal y verticalmente */
+  border-radius: 10px; /* Esquinas redondeadas */
+  color: var(--cyan); /* Color del icono */
+  background: var(--bg-elevated); /* Fondo elevado */
+  border: 1px solid rgba(34, 211, 238, 0.4); /* Borde cian semitransparente */
+}
+
+.logo__text { /* Texto principal del logo */
+  font-size: 1.25rem; /* Tamaño del texto */
+  font-weight: 800; /* Extrabold */
+  letter-spacing: -0.02em; /* Compacta ligeramente las letras */
+}
+
+.logo__accent { /* Parte resaltada del nombre en el logo */
+  color: var(--cyan); /* Color cian */
+}
+
+.nav { /* Contenedor de enlaces y acciones de navegación */
+  display: flex; /* Elementos en fila */
+  align-items: center; /* Centrados verticalmente */
+  gap: 32px; /* Separación entre elementos */
+}
+
+.nav__list { /* Lista de enlaces de navegación */
+  display: flex; /* Enlaces en fila */
+  align-items: center; /* Centrados verticalmente */
+  gap: 32px; /* Espacio entre enlaces */
+  height: var(--header-h); /* Misma altura que el header */
+}
+
+.nav__link { /* Cada enlace del menú */
+  position: relative; /* Referencia para la línea inferior animada (::after) */
+  display: flex; /* Permite centrar texto en toda la altura */
+  align-items: center; /* Centra verticalmente */
+  height: var(--header-h); /* Ocupa toda la altura de la barra */
+  font-size: 0.95rem; /* Tamaño de fuente */
+  font-weight: 500; /* Peso medio */
+  color: var(--text-muted); /* Color apagado por defecto */
+  transition: color 0.2s; /* Transición suave del color de texto */
+}
+
+.nav__link::after { /* Barra indicadora inferior al hacer hover o estar activo */
+  content: ""; /* Necesario para renderizar el pseudo-elemento */
+  position: absolute; /* Posicionado respecto a .nav__link */
+  left: 0; /* Alineado a la izquierda */
+  bottom: 0; /* Pegado al borde inferior del header */
+  width: 100%; /* Mismo ancho que el enlace */
+  height: 2px; /* Grosor de la línea indicadora */
+  background: var(--cyan); /* Color cian */
+  transform: scaleX(0); /* Oculto inicialmente (ancho visual 0) */
+  transition: transform 0.25s; /* Animación de despliegue horizontal */
+}
+
+/* --- INICIO DEL REEMPLAZO --- */ /* Marcador de cambio en el código */
+.nav__link:hover,
+.nav__link--active { /* Enlace con hover o activo */
+  color: var(--text); /* Resalta el texto en blanco */
+}
+
+.nav__link:hover::after,
+.nav__link--active::after { /* Muestra la línea inferior en hover o activo */
+  transform: scaleX(1); /* Expande la línea al 100% de ancho */
+}
+
+.menu-toggle { /* Botón hamburguesa (oculto en escritorio) */
+  display: none; /* Oculto por defecto en pantallas grandes */
+  flex-direction: column; /* Barras apiladas verticalmente */
+  gap: 5px; /* Separación entre cada barra */
+  padding: 8px; /* Área táctil */
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cursor de clic */
+}
+
+.menu-toggle__bar { /* Cada línea del icono hamburguesa */
+  width: 24px; /* Ancho de la barra */
+  height: 2px; /* Grosor de la barra */
+  background: var(--text); /* Color blanco */
+  border-radius: 2px; /* Puntas ligeramente redondeadas */
+  transition: transform 0.3s, opacity 0.3s; /* Animación al abrir/cerrar menú */
+}
+
+.menu-toggle--open .menu-toggle__bar:nth-child(1) { /* Primera barra cuando el menú está abierto */
+  transform: translateY(7px) rotate(45deg); /* Baja y rota para formar la mitad de una X */
+}
+
+.menu-toggle--open .menu-toggle__bar:nth-child(2) { /* Barra central cuando el menú está abierto */
+  opacity: 0; /* Desaparece para dejar limpia la X */
+}
+
+.menu-toggle--open .menu-toggle__bar:nth-child(3) { /* Tercera barra cuando el menú está abierto */
+  transform: translateY(-7px) rotate(-45deg); /* Sube y rota en sentido opuesto para cerrar la X */
+}

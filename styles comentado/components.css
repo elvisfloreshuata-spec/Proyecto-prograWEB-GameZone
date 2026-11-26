@@ -1,0 +1,125 @@
+.btn { /* Estilo base para botones */
+  display: inline-flex; /* Permite alinear texto e iconos en línea */
+  align-items: center; /* Centra verticalmente el contenido del botón */
+  justify-content: center; /* Centra horizontalmente el contenido del botón */
+  gap: 10px; /* Separación entre elementos internos (ej. icono y texto) */
+  padding: 16px 26px; /* Espaciado interior vertical y horizontal */
+  font-family: inherit; /* Hereda la tipografía del contexto */
+  font-size: 1rem; /* Tamaño de fuente estándar del botón */
+  font-weight: 600; /* Seminegrita */
+  border: 1px solid transparent; /* Reserva espacio para borde sin mostrarlo */
+  border-radius: 8px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor a mano al pasar encima */
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s; /* Suaviza cambios visuales */
+}
+
+.btn:hover { /* Estado al pasar el cursor sobre un botón */
+  transform: translateY(-2px); /* Eleva ligeramente el botón */
+}
+
+.btn--primary { /* Variante principal en cian */
+  color: #04202a; /* Texto oscuro para buen contraste sobre cian */
+  background: var(--cyan); /* Fondo cian */
+  box-shadow: 0 8px 30px rgba(34, 211, 238, 0.25); /* Resplandor suave cian */
+}
+
+.btn--gradient { /* Variante con fondo degradado */
+  color: #fff; /* Texto blanco */
+  background: var(--gradient); /* Degradado cian-morado */
+}
+
+.btn--gradient:hover { /* Hover específico del botón degradado */
+  box-shadow: 0 6px 20px rgba(34, 211, 238, 0.3); /* Sombra cian al pasar el cursor */
+}
+
+.btn--outline { /* Variante con borde y fondo translúcido */
+  color: var(--cyan); /* Texto cian */
+  background: rgba(34, 211, 238, 0.08); /* Fondo cian muy suave */
+  border-color: rgba(34, 211, 238, 0.3); /* Borde cian semitransparente */
+}
+
+.btn--outline:hover { /* Hover del botón outline */
+  background: rgba(34, 211, 238, 0.15); /* Aumenta ligeramente la opacidad del fondo */
+}
+
+.btn--sm { /* Modificador de tamaño pequeño */
+  padding: 10px 22px; /* Reduce el padding */
+  font-size: 0.9rem; /* Reduce ligeramente el tamaño del texto */
+}
+
+.btn--full { /* Modificador de ancho completo */
+  width: 100%; /* Ocupa todo el ancho del contenedor padre */
+}
+
+/* Legacy support for login.html */ /* Comentario de compatibilidad con una vista antigua */
+.btn-registro { /* Clase heredada para botón de registro */
+  display: inline-flex; /* Alineación flexible en línea */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 10px; /* Espacio entre elementos internos */
+  padding: 10px 22px; /* Relleno interior */
+  font-family: inherit; /* Hereda fuente */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  font-weight: 600; /* Seminegrita */
+  color: #fff; /* Texto blanco */
+  background: var(--gradient); /* Fondo degradado */
+  border: 1px solid transparent; /* Borde transparente base */
+  border-radius: 8px; /* Esquinas redondeadas */
+}
+
+.badge { /* Etiqueta/insignia superior o descriptiva */
+  display: inline-flex; /* Muestra en línea con flexbox */
+  align-items: center; /* Centra verticalmente contenido */
+  gap: 10px; /* Espacio entre punto y texto */
+  padding: 10px 16px; /* Espaciado interior */
+  font-size: 0.7rem; /* Texto pequeño */
+  font-weight: 600; /* Seminegrita */
+  letter-spacing: 0.12em; /* Separa ligeramente las letras */
+  text-transform: uppercase; /* Convierte el texto a mayúsculas */
+  color: var(--cyan); /* Texto en cian */
+  background: rgba(34, 211, 238, 0.06); /* Fondo cian sutil */
+  border: 1px solid rgba(34, 211, 238, 0.3); /* Borde cian suave */
+  border-radius: 999px; /* Forma de píldora */
+}
+
+.badge--tag { /* Variante rectangular de badge para etiquetas */
+  padding: 8px 12px; /* Padding más compacto */
+  border-radius: 6px; /* Bordes menos redondeados */
+  background: rgba(10, 14, 26, 0.85); /* Fondo oscuro semitransparente */
+}
+
+.badge__dot { /* Punto decorativo dentro de un badge */
+  width: 6px; /* Ancho del punto */
+  height: 6px; /* Alto del punto */
+  border-radius: 50%; /* Lo convierte en círculo */
+  background: var(--cyan); /* Color cian */
+}
+
+.status { /* Etiqueta para mostrar estado de torneos/partidas */
+  padding: 6px 12px; /* Relleno compacto */
+  font-size: 0.65rem; /* Texto muy pequeño */
+  font-weight: 700; /* Negrita */
+  letter-spacing: 0.08em; /* Ligero espaciado entre letras */
+  text-transform: uppercase; /* Mayúsculas */
+  border-radius: 6px; /* Bordes redondeados */
+  border: 1px solid transparent; /* Borde base transparente */
+}
+
+.status--live { /* Estado "en vivo" */
+  color: var(--cyan); /* Texto cian */
+  background: rgba(34, 211, 238, 0.12); /* Fondo cian suave */
+  border-color: rgba(34, 211, 238, 0.35); /* Borde cian */
+}
+
+.status--open { /* Estado "abierto" */
+  color: var(--green); /* Texto verde */
+  background: rgba(52, 211, 153, 0.12); /* Fondo verde suave */
+  border-color: rgba(52, 211, 153, 0.35); /* Borde verde */
+}
+
+.card { /* Tarjeta contenedora genérica */
+  background: var(--bg-elevated); /* Fondo elevado */
+  border: 1px solid var(--border); /* Borde sutil */
+  border-radius: var(--radius); /* Radio de borde estándar */
+  padding: 32px; /* Espaciado interior amplio */
+}

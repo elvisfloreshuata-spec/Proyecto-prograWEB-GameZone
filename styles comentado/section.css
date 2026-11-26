@@ -1,0 +1,39 @@
+.section { /* Sección estándar de página */
+  padding: 96px 0; /* Amplio espaciado vertical arriba y abajo */
+}
+
+.section--alt { /* Variante de sección con fondo alternativo */
+  background: var(--bg-alt); /* Color de fondo alterno */
+  border-top: 1px solid var(--border); /* Borde superior que separa secciones */
+}
+
+.section__header { /* Cabecera introductoria de una sección */
+  margin-bottom: 48px; /* Separación inferior respecto al contenido */
+}
+
+.section__eyebrow { /* Etiqueta pequeña superior sobre el título */
+  margin-bottom: 12px; /* Espacio entre eyebrow y título */
+  font-size: 0.75rem; /* Tamaño pequeño */
+  font-weight: 700; /* Negrita */
+  letter-spacing: 0.16em; /* Espaciado amplio entre letras */
+  text-transform: uppercase; /* Mayúsculas */
+  color: var(--cyan); /* Color de acento cian */
+}
+
+.section__title { /* Título principal de la sección */
+  font-family: var(--font-display); /* Tipografía display */
+  font-size: clamp(2rem, 4vw, 3rem); /* Tamaño fluido entre 2rem y 3rem según el viewport */
+  font-weight: 800; /* Extrabold */
+  letter-spacing: -0.04em; /* Kerning ajustado para titulares grandes */
+}
+
+.section__subtitle { /* Subtítulo descriptivo de la sección */
+  margin-top: 12px; /* Separación respecto al título */
+  font-size: 1.1rem; /* Tamaño ligeramente mayor al cuerpo */
+  color: var(--text-faint); /* Color tenue */
+}
+
+.section__action { /* Contenedor inferior para botón/acción de la sección */
+  margin-top: 48px; /* Espacio sobre el botón */
+  text-align: center; /* Centra el botón horizontalmente */
+}

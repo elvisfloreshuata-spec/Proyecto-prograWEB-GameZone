@@ -1,0 +1,50 @@
+* { /* Selecciona todos los elementos del DOM */
+  margin: 0; /* Elimina márgenes por defecto del navegador */
+  padding: 0; /* Elimina rellenos por defecto del navegador */
+  box-sizing: border-box; /* Incluye padding y border dentro del ancho/alto total */
+}
+
+body { /* Estilos base del cuerpo de la página */
+  font-family: var(--font-body); /* Aplica la fuente principal definida en variables */
+  background: var(--bg); /* Aplica el color de fondo principal */
+  color: var(--text); /* Aplica el color de texto por defecto */
+}
+
+a { /* Estilos base para enlaces */
+  text-decoration: none; /* Quita el subrayado por defecto */
+  color: inherit; /* Hereda el color de texto del elemento padre */
+}
+
+ul { /* Estilos base para listas desordenadas */
+  list-style: none; /* Elimina las viñetas por defecto */
+}
+
+img { /* Estilos base para imágenes */
+  display: block; /* Evita espacios extra en línea debajo de la imagen */
+  max-width: 100%; /* Evita que la imagen desborde su contenedor */
+}
+
+.container { /* Contenedor centrado con ancho máximo */
+  width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
+  max-width: var(--container); /* Limita el ancho máximo según la variable */
+  margin-inline: auto; /* Centra horizontalmente el contenedor */
+  padding-inline: 24px; /* Añade espacio lateral interior a izquierda y derecha */
+}
+
+.sprite { /* Contenedor oculto para sprites SVG */
+  position: absolute; /* Sale del flujo normal del documento */
+  width: 0; /* Sin ancho visible */
+  height: 0; /* Sin alto visible */
+  overflow: hidden; /* Oculta cualquier contenido interno */
+}
+
+.icon { /* Estilo base para iconos SVG */
+  width: 18px; /* Ancho del icono */
+  height: 18px; /* Alto del icono */
+  flex-shrink: 0; /* Impide que el icono se comprima en contenedores flex */
+  fill: none; /* Sin relleno sólido por defecto */
+  stroke: currentColor; /* Usa el color actual del texto para el trazo */
+  stroke-width: 2; /* Grosor del trazo */
+  stroke-linecap: round; /* Redondea los extremos del trazo */
+  stroke-linejoin: round; /* Redondea las esquinas del trazo */
+}

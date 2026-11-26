@@ -1,0 +1,131 @@
+@media (max-width: 960px) { /* Ajustes para tablets/pantallas menores a 960px */
+  .hero { /* Sección hero */
+    padding: 64px 0 48px; /* Reduce el padding vertical */
+  }
+
+  .hero__container { /* Contenedor del hero */
+    grid-template-columns: 1fr; /* Pasa de múltiples columnas a una sola columna */
+  }
+
+  .live-card__media { /* Área multimedia de la tarjeta en vivo */
+    height: 380px; /* Reduce la altura de la imagen/media */
+  }
+
+  .tournaments { /* Grid de torneos */
+    grid-template-columns: repeat(2, 1fr); /* Muestra 2 columnas en lugar de más */
+  }
+
+  .registro__container { /* Contenedor del registro */
+    grid-template-columns: 1fr; /* Apila información y formulario en 1 columna */
+    gap: 40px; /* Reduce la separación entre bloques */
+  }
+}
+
+@media (max-width: 860px) { /* Punto de quiebre para menú móvil (menores a 860px) */
+  .menu-toggle { /* Botón hamburguesa */
+    display: flex; /* Hace visible el botón hamburguesa */
+  }
+
+  .nav { /* Menú de navegación desplegable en móvil */
+    position: absolute; /* Se posiciona debajo del header */
+    top: var(--header-h); /* Justo debajo de la altura del header */
+    left: 0; /* Alineado al borde izquierdo */
+    right: 0; /* Alineado al borde derecho */
+    flex-direction: column; /* Elementos apilados verticalmente */
+    align-items: stretch; /* Estira elementos al ancho completo */
+    gap: 0; /* Sin separación extra entre bloques */
+    max-height: 0; /* Colapsado/cerrado por defecto */
+    padding: 0 24px; /* Sin padding vertical cuando está cerrado */
+    overflow: hidden; /* Oculta los ítems mientras está cerrado */
+    opacity: 0; /* Invisible cuando está cerrado */
+    background: var(--bg); /* Fondo sólido oscuro */
+    border-bottom: 1px solid var(--border); /* Borde inferior del menú desplegable */
+    transition: max-height 0.3s, opacity 0.3s, padding 0.3s; /* Anima apertura y cierre */
+  }
+
+  .nav--open { /* Estado abierto del menú móvil */
+    max-height: 420px; /* Permite desplegar hasta 420px de alto */
+    padding: 8px 24px 24px; /* Añade padding interior al abrirse */
+    opacity: 1; /* Hace visible el menú */
+  }
+
+  .nav__list { /* Lista de enlaces dentro del menú móvil */
+    flex-direction: column; /* Enlaces apilados verticalmente */
+    align-items: stretch; /* Ocupan todo el ancho */
+    gap: 0; /* Sin gap extra */
+    height: auto; /* Altura automática según contenido */
+  }
+
+  .nav__link { /* Enlaces en vista móvil */
+    height: auto; /* Altura basada en su padding y texto */
+    padding: 16px 0; /* Espaciado vertical táctil */
+    border-bottom: 1px solid var(--border); /* Línea divisoria entre enlaces */
+  }
+
+  .nav__link::after { /* Línea inferior de escritorio */
+    display: none; /* Se oculta en móvil porque hay separadores horizontales */
+  }
+
+  .nav__link--active,
+  .nav__link.active { /* Enlace activo en móvil */
+    color: var(--cyan); /* Resalta en cian */
+  }
+
+  .nav__cta { /* Botón de llamada a la acción dentro del menú móvil */
+    margin-top: 20px; /* Separa el botón de los enlaces anteriores */
+    padding: 14px; /* Ajusta relleno del botón */
+  }
+
+  .footer__container { /* Grid del footer en pantallas <= 860px */
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 40px 32px; /* 40px entre filas y 32px entre columnas */
+  }
+
+  .footer__brand { /* Bloque de marca en el footer */
+    grid-column: 1 / -1; /* Abarca ambas columnas arriba */
+  }
+}
+
+@media (max-width: 640px) { /* Ajustes para móviles medianos/grandes (<= 640px) */
+  .section { /* Secciones generales */
+    padding: 64px 0; /* Reduce padding vertical */
+  }
+
+  .tournaments,
+  .games { /* Grids de torneos y juegos */
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  .game-card { /* Tarjeta de juego */
+    height: 300px; /* Altura ajustada para pantallas estrechas */
+  }
+
+  .live-card__match { /* Bloque de partida dentro de la tarjeta en vivo */
+    margin-inline: 16px; /* Añade margen lateral */
+  }
+
+  .match { /* Contenedor de partida */
+    padding: 18px; /* Reduce padding interior */
+  }
+
+  .match__name { /* Nombre en partida */
+    display: none; /* Oculta el nombre para ahorrar espacio horizontal */
+  }
+}
+
+@media (max-width: 520px) { /* Ajustes para pantallas estrechas (<= 520px) */
+  .form__row { /* Fila doble de formulario */
+    grid-template-columns: 1fr; /* Apila los dos campos en una sola columna */
+  }
+
+  .card { /* Tarjetas genéricas */
+    padding: 24px 20px; /* Reduce padding interno en móviles */
+  }
+}
+
+@media (max-width: 480px) { /* Ajustes para móviles compactos (<= 480px) */
+  .footer__container { /* Grid del footer */
+    grid-template-columns: 1fr; /* Pasa todo el footer a una sola columna */
+    padding-block: 40px 32px; /* Reduce el padding vertical */
+  }
+}

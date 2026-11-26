@@ -1,0 +1,159 @@
+.registro { /* Contenedor principal de la sección de registro */
+  min-height: calc(100vh - var(--header-h)); /* Ocupa al menos el alto visible restante descontando el header */
+  display: flex; /* Permite centrar su contenido verticalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 48px 24px; /* Espaciado interior */
+  background: /* Capa múltiple de fondo: */
+    radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.15), transparent 45%), /* Resplandor morado arriba-izquierda */
+    radial-gradient(circle at 85% 80%, rgba(34, 211, 238, 0.12), transparent 45%), /* Resplandor cian abajo-derecha */
+    var(--bg); /* Color base de fondo */
+}
+
+.registro__container { /* Grid interno del registro */
+  width: 100%; /* Ancho completo disponible */
+  max-width: 1100px; /* Limita el ancho máximo */
+  margin: 0 auto; /* Centra horizontalmente */
+  display: grid; /* Disposición en cuadrícula */
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales (info a la izquierda, formulario a la derecha) */
+  gap: 64px; /* Separación entre columnas */
+  align-items: center; /* Alinea columnas al centro vertical */
+}
+
+.registro__title { /* Título principal del registro */
+  margin: 20px 0 16px; /* Márgenes superior, horizontal e inferior */
+  font-family: var(--font-display); /* Tipografía display */
+  font-size: clamp(2rem, 4.5vw, 3.2rem); /* Tamaño adaptable según pantalla */
+  font-weight: 800; /* Extrabold */
+  line-height: 1.1; /* Interlineado compacto para títulos grandes */
+  letter-spacing: -0.03em; /* Ajuste sutil entre letras */
+}
+
+.registro__title-accent { /* Texto destacado con degradado dentro del título */
+  background: var(--gradient); /* Aplica el degradado como fondo */
+  -webkit-background-clip: text; /* Recorta el fondo al texto en WebKit */
+  background-clip: text; /* Recorta el fondo al texto en navegadores compatibles */
+  color: transparent; /* Hace transparente el texto para mostrar el degradado */
+}
+
+.registro__subtitle { /* Descripción introductoria del registro */
+  max-width: 440px; /* Limita ancho de lectura */
+  font-size: 1.05rem; /* Tamaño de texto */
+  line-height: 1.6; /* Altura de línea cómoda para lectura */
+  color: var(--text-muted); /* Color secundario */
+}
+
+.registro__benefits { /* Lista de beneficios del registro */
+  margin-top: 32px; /* Separación respecto al subtítulo */
+  display: grid; /* Apila beneficios en grid */
+  gap: 14px; /* Espacio entre cada beneficio */
+}
+
+.registro__benefit { /* Cada ítem de beneficio */
+  display: flex; /* Alinea icono check y texto */
+  align-items: center; /* Centra verticalmente */
+  gap: 12px; /* Espacio entre check y texto */
+  color: var(--text-muted); /* Color secundario */
+}
+
+.registro__benefit::before { /* Círculo con marca de verificación antes de cada beneficio */
+  content: "✓"; /* Símbolo de check */
+  display: grid; /* Centrado rápido con grid */
+  place-items: center; /* Centra el check dentro del círculo */
+  width: 22px; /* Ancho del círculo */
+  height: 22px; /* Alto del círculo */
+  font-size: 0.75rem; /* Tamaño del check */
+  font-weight: 700; /* Negrita */
+  color: var(--cyan); /* Color cian */
+  background: rgba(34, 211, 238, 0.1); /* Fondo cian translúcido */
+  border-radius: 50%; /* Forma circular */
+}
+
+.form { /* Contenedor del formulario */
+  display: grid; /* Organiza campos en filas */
+  gap: 20px; /* Separación vertical entre grupos/filas */
+}
+
+.form__title { /* Título interno del formulario */
+  font-size: 1.4rem; /* Tamaño de título */
+  font-weight: 700; /* Negrita */
+}
+
+.form__row { /* Fila con dos campos lado a lado */
+  display: grid; /* Grid de 2 columnas */
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 16px; /* Espacio entre columnas */
+  min-inline-size: 0; /* Evita desbordamiento en layouts grid/flex */
+}
+
+.form__group { /* Grupo de label + input + mensaje de error */
+  display: grid; /* Apila elementos verticalmente */
+  gap: 8px; /* Separación entre label, control y error */
+  min-inline-size: 0; /* Evita que el input fuerce desbordamiento horizontal */
+}
+
+.form__label { /* Etiqueta del campo */
+  font-size: 0.85rem; /* Tamaño pequeño */
+  font-weight: 500; /* Peso medio */
+  color: var(--text-muted); /* Color secundario */
+}
+
+.form__control { /* Campo de entrada (input, select, etc.) */
+  width: 100%; /* Ocupa todo el ancho de su grupo */
+  padding: 12px 14px; /* Espaciado interior */
+  font-family: inherit; /* Hereda la tipografía */
+  font-size: 0.95rem; /* Tamaño del texto escrito */
+  color: var(--text); /* Texto en blanco */
+  background: var(--bg); /* Fondo oscuro */
+  border: 1px solid var(--border); /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  outline: none; /* Quita el outline por defecto del navegador */
+  transition: border-color 0.2s, box-shadow 0.2s; /* Transición suave al enfocar */
+}
+
+.form__control::placeholder { /* Texto placeholder del campo */
+  color: var(--text-faint); /* Color tenue */
+}
+
+.form__control:focus { /* Estado cuando el campo tiene foco */
+  border-color: var(--cyan); /* Resalta borde en cian */
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15); /* Anillo de enfoque cian */
+}
+
+.form__group--invalid .form__control { /* Borde de error cuando el grupo está marcado como inválido */
+  border-color: var(--danger); /* Borde rojo/rosado de error */
+}
+
+.form__error { /* Mensaje de validación debajo del campo */
+  min-height: 1em; /* Reserva altura de una línea para evitar saltos de layout */
+  font-size: 0.78rem; /* Tamaño pequeño */
+  color: var(--danger); /* Color de error */
+}
+
+.form__check { /* Contenedor de checkbox con texto */
+  display: flex; /* Alinea checkbox y etiqueta */
+  align-items: center; /* Centra verticalmente */
+  gap: 10px; /* Espacio entre casilla y texto */
+  font-size: 0.85rem; /* Tamaño pequeño */
+  color: var(--text-muted); /* Color secundario */
+  cursor: pointer; /* Cursor interactivo */
+}
+
+.form__check-input { /* Casilla de verificación (checkbox) */
+  width: 16px; /* Ancho de la casilla */
+  height: 16px; /* Alto de la casilla */
+  accent-color: var(--cyan); /* Colorea el check nativo en cian */
+}
+
+.form__link { /* Enlace dentro del formulario (ej. términos y condiciones) */
+  color: var(--cyan); /* Color cian */
+}
+
+.form__link:hover { /* Hover sobre enlace del formulario */
+  text-decoration: underline; /* Subraya el enlace al pasar el cursor */
+}
+
+.form__footer { /* Pie del formulario (ej. enlace a iniciar sesión) */
+  text-align: center; /* Centra el texto */
+  font-size: 0.9rem; /* Tamaño ligeramente reducido */
+  color: var(--text-muted); /* Color secundario */
+}

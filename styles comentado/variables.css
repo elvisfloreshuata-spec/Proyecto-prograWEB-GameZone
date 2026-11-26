@@ -1,0 +1,19 @@
+:root { /* Selector raíz del documento donde se declaran variables globales */
+  --bg: #0a0e1a; /* Color de fondo principal oscuro */
+  --bg-alt: #0c1120; /* Color de fondo alterno para secciones */
+  --bg-elevated: #0f1424; /* Color de fondo para elementos elevados (cards, iconos) */
+  --border: #1a2236; /* Color sutil de bordes y divisores */
+  --text: #ffffff; /* Color principal de texto */
+  --text-muted: #9aa4b8; /* Color secundario de texto (descripciones, enlaces inactivos) */
+  --text-faint: #5b6478; /* Color tenue de texto (subtítulos secundarios, copyright) */
+  --cyan: #22d3ee; /* Color de acento cian principal */
+  --purple: #8b5cf6; /* Color de acento morado secundario */
+  --green: #34d399; /* Color verde para estados positivos o abiertos */
+  --danger: #f43f5e; /* Color rojo/rosado para mensajes y estados de error */
+  --gradient: linear-gradient(90deg, var(--cyan), var(--purple)); /* Degradado horizontal de cian a morado */
+  --font-body: "Inter", sans-serif; /* Tipografía base para párrafos y textos generales */
+  --font-display: "Plus Jakarta Sans", "Inter", sans-serif; /* Tipografía para títulos destacados */
+  --header-h: 72px; /* Altura fija del header */
+  --container: 1280px; /* Ancho máximo estándar del contenedor principal */
+  --radius: 16px; /* Radio de borde por defecto para tarjetas/contenedores */
+}

@@ -1,0 +1,10 @@
+@import url("./variables.css"); /* Importa las variables CSS (colores, fuentes, tamaños) */
+@import url("./base.css"); /* Importa los estilos base y reset global */
+@import url("./components.css"); /* Importa componentes reutilizables (botones, badges, cards) */
+@import url("./form.css"); /* Importa estilos de formularios (si existe en el proyecto) */
+@import url("./header.css"); /* Importa estilos de la cabecera y navegación */
+@import url("./section.css"); /* Importa estilos genéricos de secciones */
+@import url("./index.css"); /* Importa estilos específicos de la página principal */
+@import url("./registro.css"); /* Importa estilos de la vista/sección de registro */
+@import url("./footer.css"); /* Importa estilos del pie de página */
+@import url("./responsive.css"); /* Importa media queries para adaptar el diseño a distintas pantallas */
